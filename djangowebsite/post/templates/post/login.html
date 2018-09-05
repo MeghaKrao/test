@@ -1,0 +1,72 @@
+<html>
+    <head>
+    <style>
+    
+    
+    /* The message box is shown when the user clicks on the password field */
+    #message {
+        display:none;
+        background: #f1f1f1;
+        color: #000;
+        position: relative;
+        padding: 20px;
+        margin-top: 10px;
+    }
+    
+    #message p {
+        padding: 10px 35px;
+        font-size: 18px;
+    }
+    
+    
+    </style>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" type="text/css" media="screen">
+        <title>LogIn</title>
+    </head>
+    <body>
+    <FORM  action="http://127.0.0.1:8000/post/test">{% csrf_token %}
+    <div class="imgcontainer" class="Box">
+       <center> <img src="https://www.soll-galabau.de/typo3temp/pics/88376f46b0.png" height="250" width="350" border="0"> </center>
+    </div>
+    <div class="container" class="loginbox">
+    
+        <center>
+        <h1>Welcome</h1>
+    
+        <div class="container" style="margin-top:0px;">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                   <b> <form action="" method="POST">
+                        <div class="input-group">
+                            <label for="uname"><b>Username:</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+                        </div>
+                        <br>
+                        <div class="input-group">
+                            <label for="psw"><b>Password:</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" 
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                            </div>
+                        <br></form> </b>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                    </form>
+        </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">A <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>
+    
+        </body>
+    </html>
+   
+  
